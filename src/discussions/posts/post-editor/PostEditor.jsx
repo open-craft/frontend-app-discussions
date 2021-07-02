@@ -53,6 +53,7 @@ function PostEditor({ intl }) {
             defaultValue="General"
             aria-describedby="topicAreaInput"
           >
+            {/* TODO: topics has to be filled in another PR */}
             <option>General</option>
           </Form.Control>
         </Form.Group>

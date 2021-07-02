@@ -21,14 +21,14 @@ function PostEditor({ intl }) {
             {intl.formatMessage(messages.type)}
           </Form.Label>
           <Form.Text className="mb-3" muted>
-            {intl.formatMessage(messages.type_description)} ({intl.formatMessage(messages.required)})
+            {intl.formatMessage(messages.typeDescription)} ({intl.formatMessage(messages.required)})
           </Form.Text>
 
           <Form.Check inline type="radio" id="question">
             <Form.Check.Input type="radio" />
             <Form.Check.Label>
               <FontAwesomeIcon icon={faQuestion} />
-              <span className="ml-2">{intl.formatMessage(messages.question_type)}</span>
+              <span className="ml-2">{intl.formatMessage(messages.questionType)}</span>
             </Form.Check.Label>
           </Form.Check>
 
@@ -36,17 +36,17 @@ function PostEditor({ intl }) {
             <Form.Check.Input type="radio" />
             <Form.Check.Label>
               <FontAwesomeIcon icon={faComments} />
-              <span className="ml-2">{intl.formatMessage(messages.discussion_type)}</span>
+              <span className="ml-2">{intl.formatMessage(messages.discussionType)}</span>
             </Form.Check.Label>
           </Form.Check>
         </Form.Group>
 
         <Form.Group>
           <Form.Label>
-            {intl.formatMessage(messages.topic_area)}
+            {intl.formatMessage(messages.topicArea)}
           </Form.Label>
           <Form.Text id="topicAreaInput" muted>
-            {intl.formatMessage(messages.topic_area_description)} ({intl.formatMessage(messages.required)})
+            {intl.formatMessage(messages.topicAreaDescription)} ({intl.formatMessage(messages.required)})
           </Form.Text>
           <Form.Control
             as="select"
@@ -62,14 +62,14 @@ function PostEditor({ intl }) {
             {intl.formatMessage(messages.title)}
           </Form.Label>
           <Form.Text id="titleInput" muted>
-            {intl.formatMessage(messages.title_description)} ({intl.formatMessage(messages.required)})
+            {intl.formatMessage(messages.titleDescription)} ({intl.formatMessage(messages.required)})
           </Form.Text>
           <Form.Control type="text" aria-describedby="titleInput" />
         </Form.Group>
 
         <Form.Group>
           <Form.Label>
-            {intl.formatMessage(messages.question_text)}
+            {intl.formatMessage(messages.questionText)}
           </Form.Label>
           <Form.Control as="textarea" rows="3" />
         </Form.Group>
@@ -79,14 +79,14 @@ function PostEditor({ intl }) {
             <Form.Check.Input type="checkbox" />
             <Form.Check.Label>
               <FontAwesomeIcon icon={faStar} />
-              <span className="ml-2">{intl.formatMessage(messages.follow_post)}</span>
+              <span className="ml-2">{intl.formatMessage(messages.followPost)}</span>
             </Form.Check.Label>
           </Form.Check>
 
           <Form.Check inline type="checkbox" id="anonymous">
             <Form.Check.Input type="checkbox" />
             <Form.Check.Label>
-              <span className="ml-2">{intl.formatMessage(messages.anonymous_post)}</span>
+              <span className="ml-2">{intl.formatMessage(messages.anonymousPost)}</span>
             </Form.Check.Label>
           </Form.Check>
         </Form.Group>

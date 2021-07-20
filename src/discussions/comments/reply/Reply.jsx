@@ -13,13 +13,13 @@ import { selectCommentResponses } from '../data/selectors';
 import { fetchCommentResponses } from '../data/thunks';
 import messages from '../messages';
 
-function ReplyHeader({reply, intl}) {
+function ReplyHeader({ reply, intl }) {
   return (
     <div className="d-flex flex-row justify-content-between">
       <div className="align-items-center d-flex flex-row">
         <Avatar className="m-2" alt={reply.author} src={null} />
         <div className="status small">
-          <a>
+          <a href="#">
             <h1 className="font-weight-normal text-info-300 mr-1 small">
               {reply.author}
             </h1>
@@ -43,6 +43,11 @@ function ReplyHeader({reply, intl}) {
     </div>
   );
 }
+
+ReplyHeader.propTypes = {
+  reply: commentShape.isRequired,
+  intl: intlShape.isRequired,
+};
 
 function Reply({
   reply,

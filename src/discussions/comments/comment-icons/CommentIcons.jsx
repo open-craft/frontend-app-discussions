@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Button, Icon } from '@edx/paragon';
-import { Flag, MoreVert, StarFilled, StarOutline } from '@edx/paragon/icons';
+import {
+  Flag,
+  StarFilled,
+  StarOutline,
+} from '@edx/paragon/icons';
 
 function CommentIcons({ abuseFlagged, following }) {
   return (
@@ -20,11 +24,11 @@ function CommentIcons({ abuseFlagged, following }) {
             </Button>
           )
       )}
-      { abuseFlagged && (
+      {abuseFlagged && (
         <Button variant="link" className="p-0" size="xs">
           <Icon src={Flag} />
         </Button>
-      ) }
+      )}
     </div>
   );
 }

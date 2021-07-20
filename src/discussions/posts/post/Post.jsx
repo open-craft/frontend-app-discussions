@@ -73,8 +73,8 @@ function PostHeader({
                 messages.postedOn,
                 {
                   author: post.author,
-                  time: timeago.format(post.createdAt, intl.locale)
-                }
+                  time: timeago.format(post.createdAt, intl.locale),
+                },
               )}
             </span>
           </span>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { Button, Spinner } from '@edx/paragon';
+import { Button, Card, Spinner } from '@edx/paragon';
 
 import { selectThread } from '../posts/data/selectors';
 import Post from '../posts/post/Post';
@@ -32,7 +32,13 @@ function CommentsView({ intl }) {
         <div className="list-group list-group-flush">
           <Post post={thread} />
           {
-            comments.map(reply => <Reply reply={reply} key={reply.id} />)
+            <div className="list-group">
+              {comments.map(reply => (
+                <div className="list-group-item list-group-item-action">
+                  <Reply reply={reply} key={reply.id} />
+                </div>
+              ))}
+            </div>
           }
         </div>
       </div>

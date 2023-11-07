@@ -1,13 +1,10 @@
-@import "~@edx/brand/paragon/fonts.scss";
-@import "~@edx/brand/paragon/variables.scss";
-@import "~@openedx/paragon/scss/core/core.scss";
-@import "~@edx/brand/paragon/overrides.scss";
+/* @import "~@edx/brand/paragon/fonts.scss"; */
+/* @import "~@edx/brand/paragon/variables.scss"; */
+/* @import "~@openedx/paragon/scss/core/core.scss"; */
+/* @import "~@edx/brand/paragon/overrides.scss"; */
 
-@import "~@edx/frontend-component-footer/dist/footer";
-@import "~@edx/frontend-component-header/dist/index";
-
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome";
+/* @use "~@edx/brand/dist/core.min.css"; */
+/* @use "~@edx/brand/dist/light.min.css"; */
 
 body,
 #main
@@ -41,23 +38,23 @@ body,
 }
 
 .text-staff-color {
-  color: $warning-700;
+  color: var(--pgn-color-warning-700);
 }
 
 .outline-staff-color {
-  outline: $warning-700 solid 2px;
+  outline: var(--pgn-color-warning-700) solid 2px;
 }
 
 .text-TA-color {
-  color: $success-700;
+  color: var(--pgn-color-success-700);
 }
 
 .outline-TA-color {
-  outline: $success-700 solid 2px;
+  outline: var(--pgn-color-success-700) solid 2px;
 }
 
 .outline-anonymous {
-  outline: $light-400 solid 2px;
+  outline: var(--pgn-color-light-400) solid 2px;
 }
 
 .font-size-8 {
@@ -165,7 +162,7 @@ body,
 
 .badge-padding {
   padding-top: 1px;
-  padding-bottom: 1px
+  padding-bottom: 1px;
 }
 
 .discussion-post:hover {
@@ -173,7 +170,7 @@ body,
 }
 
 .learner > a:hover {
-  background-color: $light-300;
+  background-color: var(--pgn-color-light-300);
 }
 
 .py-10px {
@@ -248,16 +245,16 @@ header {
 }
 
 .filter-menu:focus-visible {
-  background-color: #e9e6e4 !important;
+  background-color: var(--pgn-color-light-400) !important;
 }
 
 .border-light-400-2 {
-  border: 2px solid $light-400 !important;
+  border: 2px solid var(--pgn-color-light-400) !important;
   border-width: 2px !important;
 }
 
 .border-primary-500-2 {
-  border: 2px solid $primary-500 !important;
+  border: 2px solid var(--pgn-color-primary-500) !important;
   border-width: 2px !important;
 }
 
@@ -290,14 +287,12 @@ header {
       font-size: 18px !important;
       font-weight: 400;
       line-height: 28px;
-    };
-
+    }
     span {
       font-weight: 500;
       line-height: 24px;
-    };
-  };
-
+    }
+  }
   .container-xl {
     .course-title-lockup {
       font-size: 1.125rem !important;
@@ -305,14 +300,13 @@ header {
 
     .logo {
       margin-top: 2px;
-    };
-  };
-
+    }
+  }
   span:first-child {
     font-size: 14px !important;
     margin-top: 1px !important;
     margin-bottom: -1px !important;
-  };
+  }
 }
 
 #courseTabsNavigation {
@@ -329,7 +323,7 @@ header {
     .nav-item {
       padding-bottom: 8px;
     }
-  };
+  }
 }
 
 .min-content-height {
@@ -337,12 +331,13 @@ header {
 }
 
 .header-action-bar {
-  z-index: 2 !important;
+  z-index: 3 !important;
   box-shadow: 0px 2px 4px rgb(0 0 0 / 15%), 0px 2px 8px rgb(0 0 0 / 15%);
+
   top: 0;
 
-  .nav-button-group{
-    .nav-item:not(:last-child){
+  .nav-button-group {
+    .nav-item:not(:last-child) {
       .nav-link {
           border-right: 0;
 
@@ -383,10 +378,9 @@ header {
 }
 
 .btn-icon.btn-icon-primary:hover {
-  background-color: $light-300 !important;
-  color: $primary-500 !important
+  background-color: var(--pgn-color-light-300) !important;
+  color: var(--pgn-color-primary-500) !important;
 }
-
 
 @media only screen and (max-width: 767px) {
   body:not(.tox-force-desktop) .tox .tox-dialog {
@@ -418,7 +412,7 @@ header {
   max-width: fit-content !important;
   margin-left: auto;
   margin-top: -2.063rem;
-  z-index: 1;
+  z-index: 2;
   right: 32px;
 }
 
@@ -427,38 +421,38 @@ header {
 }
 
 .hover-button:hover {
-  background-color: $light-300 !important;
+  background-color: var(--pgn-color-light-300) !important;
   height: 36px !important;
   border: none !important;
 }
 
 .btn-tertiary:hover {
-  background-color: $light-300 !important;
+  background-color: var(--pgn-color-light-300) !important;
 }
 
 .nav-button-group {
   .nav-link {
     &:hover {
-      background-color: $light-300 !important;
+      background-color: var(--pgn-color-light-300) !important;
     }
   }
 
   .nav-link.active,
   .show>.nav-link {
-    background-color: $primary-500 !important;
+    background-color: var(--pgn-color-primary-500) !important;
   }
 }
 
 .course-tabs-navigation {
   .nav a {
     &:hover {
-      background-color: $light-300 !important;;
+      background-color: var(--pgn-color-light-300) !important;;
     }
   }
 }
 
 .btn-tertiary:disabled {
-  color: $gray-700 !important;
+  color: var(--pgn-color-gray-700) !important;
   background-color: transparent !important;
 }
 
@@ -471,7 +465,7 @@ header {
 }
 
 .html-loader p:last-child {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 code {
@@ -535,14 +529,14 @@ code {
 .post-preview,
 .discussion-comments {
   blockquote {
-    border-left: 2px solid $gray-200;
+    border-left: 2px solid var(--pgn-color-gray-200);
     margin-left: 1.5rem;
     padding-left: 1rem;
   }
 }
 
 .add-comment-btn {
-  border: 1px solid $light-300 !important;
+  border: 1px solid var(--pgn-color-light-300) !important;
 }
 
 .icon-size-24 {
@@ -588,7 +582,7 @@ code {
 }
 
 th, td {
-  border: 1px dashed $gray-200;
+  border: 1px dashed var(--pgn-color-gray-200);
   padding: 0.4rem;
   white-space: nowrap;
 }

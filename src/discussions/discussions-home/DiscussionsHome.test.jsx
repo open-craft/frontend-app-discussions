@@ -144,7 +144,7 @@ describe('DiscussionsHome', () => {
     await executeThunk(fetchCourseConfig(courseId), store.dispatch, store.getState);
     await renderComponent(`/${courseId}/${searchByEndPoint}`);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.queryByText('Add a post')).toBeInTheDocument();
     });
   });
@@ -170,7 +170,7 @@ describe('DiscussionsHome', () => {
     await executeThunk(fetchThreads(courseId), store.dispatch, store.getState);
     await renderComponent(`/${courseId}/${searchByEndPoint}`);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.queryByText(result)).toBeInTheDocument();
     });
   });
@@ -199,7 +199,7 @@ describe('DiscussionsHome', () => {
       await executeThunk(fetchCourseTopicsV3(courseId), store.dispatch, store.getState);
       await renderComponent(`/${courseId}/${searchByEndPoint}`);
 
-      waitFor(() => {
+      await waitFor(() => {
         expect(screen.queryByText('No topic selected')).toBeInTheDocument();
       });
     },
@@ -210,7 +210,7 @@ describe('DiscussionsHome', () => {
     await executeThunk(fetchCourseConfig(courseId), store.dispatch, store.getState);
     await renderComponent(`/${courseId}/learners`);
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.queryByText('Nothing here yet')).toBeInTheDocument();
     });
   });

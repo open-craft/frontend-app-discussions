@@ -109,7 +109,7 @@ describe('HoverCard', () => {
 
   test('it should have hover card on post', async () => {
     await waitFor(() => renderComponent(discussionPostId));
-    const post = screen.getByTestId('post-thread-1');
+    const post = await waitFor(() => screen.findByTestId('post-thread-1'));
     expect(within(post).getByTestId('hover-card-thread-1')).toBeInTheDocument();
   });
 
@@ -121,7 +121,7 @@ describe('HoverCard', () => {
 
   test('it should show add response, like, follow and actions menu for hovered post', async () => {
     await waitFor(() => renderComponent(discussionPostId));
-    const post = screen.getByTestId('post-thread-1');
+    const post = await waitFor(() => screen.findByTestId('post-thread-1'));
     const hoverCard = within(post).getByTestId('hover-card-thread-1');
 
     expect(within(hoverCard).queryByRole('button', { name: /Add response/i })).toBeInTheDocument();

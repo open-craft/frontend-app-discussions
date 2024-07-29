@@ -174,7 +174,7 @@ describe('PostEditor', () => {
       // Initially the user can't select a cohort
       expect(screen.queryByRole('combobox', { name: /cohort visibility/i })).not.toBeInTheDocument();
       // If a cohorted topic is selected, the cohort visibility selector is displayed
-      ['ncw-topic 2', 'category-1-topic 2', 'category-2-topic 1', 'category-2-topic 2'].forEach(async (topicName) => {
+      ['ncw-topic 2', 'category-1-topic 2', 'category-2-topic 1', 'category-2-topic 2'].forEach((topicName) => {
         act(() => {
           userEvent.selectOptions(
             screen.getByRole('combobox', { name: /topic area/i }),
@@ -185,7 +185,7 @@ describe('PostEditor', () => {
         expect(screen.queryByRole('combobox', { name: /cohort visibility/i })).toBeInTheDocument();
       });
       // Now if a non-cohorted topic is selected, the cohort visibility selector is hidden
-      ['ncw-topic 1', 'category-1-topic 1', 'category-2-topic 4'].forEach(async (topicName) => {
+      ['ncw-topic 1', 'category-1-topic 1', 'category-2-topic 4'].forEach((topicName) => {
         act(() => {
           userEvent.selectOptions(
             screen.getByRole('combobox', { name: /topic area/i }),

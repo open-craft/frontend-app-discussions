@@ -42,7 +42,8 @@ async function mockAxiosReturnPagedCommentsResponses() {
     reverse_order: true,
   };
 
-  [1, 2].forEach(async (page) => {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const page of [1, 2]) {
     axiosMock.onGet(commentsResponsesApiUrl, { params: { ...paramsTemplate, page } }).reply(
       200,
       Factory.build('commentsResult', null, {
@@ -53,8 +54,9 @@ async function mockAxiosReturnPagedCommentsResponses() {
       }),
     );
 
+    // eslint-disable-next-line no-await-in-loop
     await executeThunk(fetchCommentResponses(parentId), store.dispatch, store.getState);
-  });
+  }
 }
 
 function renderComponent(postId) {

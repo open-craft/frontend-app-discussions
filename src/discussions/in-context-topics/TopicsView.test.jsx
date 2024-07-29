@@ -150,7 +150,9 @@ describe('InContext Topics View', () => {
     renderComponent();
     const sectionGroups = await screen.getAllByTestId('section-group');
 
-    coursewareTopics.forEach(async (topic, index) => {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [index, topic] of coursewareTopics.entries()) {
+      // eslint-disable-next-line no-await-in-loop
       await waitFor(async () => {
         const stats = await sectionGroups[index].querySelectorAll('.icon-size:not([data-testid="subsection-group"].icon-size)');
         const subsectionGroups = await within(sectionGroups[index]).getAllByTestId('subsection-group');
@@ -159,7 +161,7 @@ describe('InContext Topics View', () => {
         expect(stats).toHaveLength(0);
         expect(subsectionGroups).toHaveLength(2);
       });
-    });
+    }
   });
 
   it('The subsection should have a title name, be clickable, and have the stats', async () => {

@@ -154,7 +154,7 @@ describe('InContext Topics View', () => {
     for (const [index, topic] of coursewareTopics.entries()) {
       // eslint-disable-next-line no-await-in-loop
       await waitFor(async () => {
-        const stats = await sectionGroups[index].querySelectorAll('.icon-size:not([data-testid="subsection-group"].icon-size)');
+        const stats = await sectionGroups[index].querySelectorAll('.icon-size:not([data-testid="subsection-group"] .icon-size)');
         const subsectionGroups = await within(sectionGroups[index]).getAllByTestId('subsection-group');
 
         expect(within(sectionGroups[index]).queryByText(topic.displayName)).toBeInTheDocument();
